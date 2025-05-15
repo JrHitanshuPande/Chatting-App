@@ -1,0 +1,37 @@
+.maincontainer {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 4rem);
+}
+
+.userbar {
+    width: 20%
+}
+
+.messagebox {
+    width: 80%
+}
+
+.profileimg {
+    height: 5rem;
+    width: 5rem;
+    background-color: red;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: none;
+    align-self: center;
+}
+
+
+@media (max-width: 750px) {
+    .userbar {
+    width: 35%
+}
+
+.messagebox {
+    width: 65%
+}
+}

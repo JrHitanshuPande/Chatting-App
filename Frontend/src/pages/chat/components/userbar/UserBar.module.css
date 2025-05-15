@@ -1,0 +1,46 @@
+.maincontainer {
+    height: 100%;
+    /* border: 2px solid red; */
+    width: 100%;
+}
+
+.profilecard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    padding: 0.3rem;
+    border-bottom: 1px solid rgb(179, 179, 179);
+}
+
+.activeuser
+{
+     background-color: rgba(206, 206, 206, 0.795);
+}
+
+.onlineuser
+{
+    color:green;
+}
+.profilecard:hover{
+ cursor: pointer;
+}
+
+.imagebox {
+    display: flex;
+    align-items: center;
+}
+
+.messagebox {
+    margin-left: 0.8rem;
+}
+
+.profileimg {
+    height: 3rem;
+    width: 3rem;
+    /* background-color: red; */
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: none;
+    align-self: center;
+}
