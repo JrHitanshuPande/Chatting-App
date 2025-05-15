@@ -35,8 +35,14 @@ const UserMessage = () => {
     useEffect(() => {
         fetchMessages();
         socket.on("receive-message", ({ message }) => {
-            setMessages(prev => [...prev, message]);
-            console.log("messages", messages)
+            if (
+                message.senderId === selectedUser ||
+                message.receiverId === selectedUser
+            ) {
+                setMessages(prev => [...prev, message]);
+            }
+            // setMessages(prev => [...prev, message]);
+            // console.log("messages", messages)
         });
         return () => {
             socket.off("receive-message");
