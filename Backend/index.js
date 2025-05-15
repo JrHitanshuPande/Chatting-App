@@ -50,7 +50,7 @@ setupSocket(io);
 //     })
 // })
 
-httpServer.listen(4000, async () => {
+httpServer.listen(process.env.PORT, async () => {
     try {
 
         console.log("Server started");
