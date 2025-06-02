@@ -15,7 +15,7 @@
     justify-content: center;
     width: 20rem;
     box-shadow: 0rem 0rem 0.5rem rgb(105, 105, 105);
-    background-color: rgb(75, 255, 255);
+    /* background-color: rgb(75, 255, 255); */
     padding: 1rem;
 }
 
@@ -38,6 +38,15 @@
     cursor: pointer;
 }
 
+.button {
+    padding: 0.4rem;
+    background-color: rgb(255, 45, 45);
+    color: white;
+    border: 1px solid rgba(138, 138, 138, 0.473);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
 
 @media (max-width:720px) {
     .container {

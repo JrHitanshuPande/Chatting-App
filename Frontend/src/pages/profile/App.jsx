@@ -83,7 +83,7 @@ const Profile = () => {
                         <input disabled value={userData?.name} />
                         <input disabled value={userData?.email} />
                         <input type="date" name="dob" value={userData?.dob} onChange={handleChange} />
-                        <button onClick={handleSubmit}>Save</button>
+                        <button onClick={handleSubmit} className={styles.button}>Save</button>
                     </div>
                 </div>
             </div>

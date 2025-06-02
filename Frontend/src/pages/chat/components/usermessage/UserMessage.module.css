@@ -21,14 +21,13 @@
     /* flex-direction: column; */
 }
 
-.messageinnerbox
-{
+.messageinnerbox {
     display: flex;
     flex-direction: column;
 
 }
 
-.date{
+.date {
     display: flex;
     font-size: 0.9rem;
 }
@@ -69,6 +68,12 @@
 .inputcontainer button {
     width: 10%;
     padding: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background-color: rgb(255, 45, 45);
+    color: white;
+    border: 1px solid rgba(138, 138, 138, 0.473);
+    cursor: pointer;
 }
 
 @media (max-width: 750px) {
