@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef} from "react";
 import axios from "../../api/axios";
 import styles from "./App.module.css";
 
@@ -31,7 +31,7 @@ const Profile = () => {
                 }
                 // console.log(response)
             } catch (err) {
-                console.log(err);
+                console.log("Error in Fetching user Details, Please retry again");
             }
         }
         userDate();
@@ -46,7 +46,6 @@ const Profile = () => {
                 let previewurl;
                 if (files[0]) {
                     previewurl = URL.createObjectURL(files[0]);
-                    // console.log('previewurl', previewurl)
                 }
                 setUserData((prev) => ({ ...prev, "selectedFile": files[0], "preview": previewurl }));
             }

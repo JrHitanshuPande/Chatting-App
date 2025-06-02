@@ -9,6 +9,7 @@
     height: 90%;
     overflow: auto;
     height: calc(100% - 3rem);
+    padding: 0rem 0.5rem 0rem 0.5rem;
 }
 
 .messagebox {
@@ -17,15 +18,29 @@
     /* background-color: rgba(99, 250, 29, 0.671); */
     /* border: 0.5px solid rgb(175, 175, 175); */
     display: flex;
+    /* flex-direction: column; */
+}
+
+.messageinnerbox
+{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.date{
+    display: flex;
+    font-size: 0.9rem;
 }
 
 .message {
     background-color: #25D366;
     height: 100%;
-    max-width: 40%;
+    /* max-width: 40%; */
     word-wrap: break-word;
     padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
+    /* width: 100%; */
 }
 
 .messagetextleft {

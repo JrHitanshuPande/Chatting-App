@@ -8,6 +8,7 @@ const userDetail = async (req, res) => {
         const userId = req.user._id;
         if (userId) {
             const userData = await User.findOne({ _id: userId }).select("-password");
+
             if (!userData) {
                 return res.status(401).json({ message: "User not found" });
             }

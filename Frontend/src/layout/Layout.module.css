@@ -14,11 +14,13 @@
     justify-content: space-between;
     padding: 0rem 1rem 0rem 1rem;
     min-height: 4rem;
+    border-bottom: 1px solid rgba(138, 138, 138, 0.473);
 }
 
 .logo {
     font-weight: 500;
     color: red;
+    text-decoration: none;
 }
 
 .menu {

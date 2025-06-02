@@ -31,7 +31,6 @@ const Home = () => {
         }
 
         socket.on("online-users", (users) => {
-            console.log("users", users)
             setOnlineUsers(users);
         });
 

@@ -3,7 +3,7 @@ import axios from "../../../../api/axios";
 import { useSelector } from "react-redux";
 import { useEffect, useState, useRef } from "react";
 import socket from "../../../../api/socket";
-
+import UserHeader from "../userheader/userHeader";
 const UserMessage = () => {
 
     const selectedUser = useSelector((state) => state.message.selectedUser);
@@ -17,7 +17,6 @@ const UserMessage = () => {
 
     const fetchMessages = async () => {
         try {
-            console.log("selectedUser", typeof (selectedUser))
             const allMessage = await axios.get("/message/get",
                 {
                     params: {
@@ -25,7 +24,6 @@ const UserMessage = () => {
                     }
                 }
             )
-            console.log("allMessage", allMessage)
             setMessages(allMessage.data.allMessages);
         } catch (err) {
 
@@ -41,8 +39,6 @@ const UserMessage = () => {
             ) {
                 setMessages(prev => [...prev, message]);
             }
-            // setMessages(prev => [...prev, message]);
-            // console.log("messages", messages)
         });
         return () => {
             socket.off("receive-message");
@@ -99,21 +95,24 @@ const UserMessage = () => {
             fetchMessages();
             // scrollDown();
         } catch (err) {
-            console.log("Erron in UserMessage", err)
+            console.log("Error: Message Not Sending")
         }
     }
 
     return (
         <>
             <div className={styles.maincontainer}>
-                {/* <div >
-                    <h1>Profile</h1>
-                </div> */}
+                <div >
+                    {/* <UserHeader selecteduser={selectedUser}/> */}
+                </div>
                 <div className={styles.messagebody} >
                     {messages.map((message) => {
                         return (
                             <div key={message?._id} className={`${styles.messagebox} ${selectedUser == message.senderId ? styles.messagetextleft : styles.messagetextright}`}>
-                                <p className={styles.message}> {message?.message}</p>
+                                <div className={styles.messageinnerbox} >
+                                    <p className={styles.message}> {message?.message}</p>
+                                    <p className={`${styles.date} ${selectedUser == message.senderId ? styles.messagetextleft : styles.messagetextright}`} >{message?.createdAt && new Date(message.createdAt).toLocaleTimeString()} </p>
+                                </div>
                             </div>
                         )
                     })}

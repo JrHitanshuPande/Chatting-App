@@ -14,10 +14,10 @@ const Layout = () => {
             socket.connect();
         }
 
-         if (userId) {
+        if (userId) {
             socket.emit("add-user", userId);
         }
-        
+
         return () => {
             socket.disconnect();
         };
@@ -27,7 +27,7 @@ const Layout = () => {
         <>
             <div className={styles.maincontainer}>
                 <div className={styles.header}>
-                    <div className={styles.logo}>Chatting App</div>
+                    <div><NavLink to="/" className={styles.logo}> Chatify</NavLink></div>
                     <div className={styles.menu}>
                         <ul>
                             <li><NavLink to="/" className={({ isActive }) =>

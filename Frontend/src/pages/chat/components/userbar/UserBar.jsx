@@ -10,7 +10,6 @@ const UserBar = ({ userList, onlineUsers, typingUsers }) => {
 
     const handleClick = async (userid) => {
         try {
-            console.log(userid);
             await dispatch(setselectedUser(userid));
         } catch (err) {
             console.log("Err in UserBar", err);
