@@ -8,11 +8,15 @@ const userMessage = createSlice(
             messages: [],
         },
         reducers: {
-            setselectedUser : (state, action) => {
+            setselectedUser: (state, action) => {
                 state.selectedUser = action.payload;
-            }
+            },
+            logoutMessage: (state) => {
+                state.selectedUser = null;
+                state.messages = [];
+            },
         }
     }
 )
-export const { setselectedUser } = userMessage.actions;
+export const { setselectedUser, logoutMessage } = userMessage.actions;
 export default userMessage.reducer; 

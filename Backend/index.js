@@ -54,7 +54,7 @@ httpServer.listen(process.env.PORT, async () => {
     try {
 
         console.log("Server started");
-        console.log(process.env.JWT_TOKEN_KEY)
+
         await mongoose.connect(process.env.MONGDODB_URL, { dbName: "HitApp" });
     } catch (err) {
         console.log(err);

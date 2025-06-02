@@ -35,7 +35,6 @@ const Login = () => {
             const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, formData, {
                 withCredentials: true
             });
-            console.log("response", response);
             dispatch(login(response.data.user));
             navigate("/");
         } catch (err) {

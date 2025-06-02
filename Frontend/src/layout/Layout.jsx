@@ -4,6 +4,8 @@ import { NavLink, Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux"
 import socket from "../api/socket";
 import { logout } from "../store/slices/userSlice";
+import { logoutMessage } from "../store/slices/messageSlice";
+
 
 const Layout = () => {
     const isAuthorized = useSelector((state) => state.user.token);
@@ -38,7 +40,8 @@ const Layout = () => {
                             }>Profile</NavLink></li>
                             <li onClick={() => {
                                 console.log("Logout");
-                                dispatch(logout())
+                                dispatch(logout());
+                                dispatch(logoutMessage());
                             }} style={{ cursor: "pointer" }}>Logout</li>
                         </ul>
                     </div>

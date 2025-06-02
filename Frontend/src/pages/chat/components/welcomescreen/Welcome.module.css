@@ -1,0 +1,19 @@
+.maincontainer {
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid rgba(138, 138, 138, 0.473);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maintitle
+{
+    color:rgb(252, 57, 57);
+    transition: 1s ease-in;
+}
+
+.maintitle:hover{
+    color: green;
+}
+

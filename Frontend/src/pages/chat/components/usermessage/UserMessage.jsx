@@ -3,7 +3,8 @@ import axios from "../../../../api/axios";
 import { useSelector } from "react-redux";
 import { useEffect, useState, useRef } from "react";
 import socket from "../../../../api/socket";
-import UserHeader from "../userheader/userHeader";
+import Welcome from "../welcomescreen/Welcome"
+
 const UserMessage = () => {
 
     const selectedUser = useSelector((state) => state.message.selectedUser);
@@ -101,12 +102,9 @@ const UserMessage = () => {
 
     return (
         <>
-            <div className={styles.maincontainer}>
-                <div >
-                    {/* <UserHeader selecteduser={selectedUser}/> */}
-                </div>
+            {selectedUser ? <div className={styles.maincontainer}>
                 <div className={styles.messagebody} >
-                    {messages.map((message) => {
+                    {messages.length > 0 ? messages?.map((message) => {
                         return (
                             <div key={message?._id} className={`${styles.messagebox} ${selectedUser == message.senderId ? styles.messagetextleft : styles.messagetextright}`}>
                                 <div className={styles.messageinnerbox} >
@@ -115,7 +113,11 @@ const UserMessage = () => {
                                 </div>
                             </div>
                         )
-                    })}
+                    }) :
+                        <div style={{display:"flex", justifyContent:"center", alignItems:"center", height:"100%"}}>
+                            <h1 style={{color:"black", fontSize:"2rem"}}>Start Messaging</h1>
+                        </div>
+                    }
                     <div ref={scrollRef} style={{ margin: "0px", padding: "0px" }} />
                 </div>
                 <form className={styles.inputcontainer} onSubmit={handleSubmit}>
@@ -123,6 +125,10 @@ const UserMessage = () => {
                     <button >Send</button>
                 </form>
             </div>
+                :
+                <Welcome />
+            }
+
         </>
     )
 }
